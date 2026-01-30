@@ -1,11 +1,217 @@
-@import 'tailwindcss';
+body {
+    margin: 0px;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+header {
+    background-color: rgb(10 98 180);
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+#headerbox {
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#mainlogo {
+    margin: 0px 30px;
+}
+
+#nav {
+    background-color: #000000bf;
+    box-shadow: inset 0px 0px 4px 0px black;
+    display: flex;
+    user-select: none;
+    width: 270px;
+    position: relative;
+    flex-direction: column;
+}
+
+#nav ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav ul li {
+    display: block;
+    position: relative;
+    margin: 2px 4px;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+#nav .dropdown {
+    box-shadow: 0px 6px 8px -8px black;
+}
+
+#nav .dropdown:hover {
+    background-color: rgb(82, 82, 82);
+}
+
+#nav .dropdown>ul li:hover {
+    background-color: grey;
+}
+
+#nav .dropdown>div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dropdownarrow {
+    rotate: 180deg;
+    transition: rotate 0.2s ease;
+}
+
+#nav .dropdown>ul {
+    padding: 4px 8px;
+    margin-top: 14px;
+    border-left: 1px solid #a2a2a2;
+}
+
+#nav .dropdown>ul li {
+    display: flex;
+    margin: 4px;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+#nav li.active {
+    background-color: purple;
+}
+
+#nav li.active>div .menuselect,
+#nav li:hover>div .menuselect {
+    right: 10px;
+    /* Keep it in place */
+    opacity: 1;
+}
+
+/* Default state - Hidden */
+.menuselect {
+    position: absolute;
+    right: -10px;
+    /* Start off-screen */
+    opacity: 0;
+    transition: right 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+maincontainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    height: calc(100vh - 80px);
+    overflow: auto;
+    background-image: url(/images/mainbackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+}
+
+.componentbox {
+    margin: 10px;
+    padding: 10px 20px 20px 20px;
+    background-color: #262626;
+    display: flex;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0px 0px 22px -6px black;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.componentbox:hover {
+    background-color: rgba(145, 145, 145, 0.4);
+}
+
+.componentboxheader {
+    padding: 12px;
+    font-size: 20px;
+    border-bottom: 1px solid #6c6c6c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.transparentsectionbox {
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    color: white;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sectionbox {
+    background-color: #0c0c0ce8;
+    color: white;
+    padding: 40px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* General form input styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+    appearance: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus state */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #4f46e5;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Custom arrow for select */
+select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23999' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px 10px;
+    padding-right: 40px;
+}
+
+/* Optional: smooth hover effect */
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover {
+    border-color: #bbb;
 }

@@ -14,12 +14,12 @@ class AppController extends Controller
         $authUser = Auth::user();
     }
 
-    public function firstSetup(){
+    public function dashboard(){
         if(User::all()->isEmpty()){
-            return view('first-setup.index');
+            return view('dashboard.index');
         }
 
-        // Optionally, redirect elsewhere if setup is not needed
-        return redirect()->route('home');
+        // Redirect to main app if setup is already done
+        return view('app');
     }
 }

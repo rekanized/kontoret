@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->boolean('enabled')->default(1);
-            $table->string('email');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->rememberToken();
             $table->string('job_title')->nullable();
             $table->string('azure_id')->unique()->index()->nullable();
@@ -24,6 +26,9 @@ return new class extends Migration
             $table->boolean('is_hidden')->default(0);
             $table->string('manager_id')->nullable()->index();
             $table->string('mobile_phone')->nullable();
+            $table->string('google_id')->nullable()->unique();
+            $table->text('google_token')->nullable();
+            $table->text('google_refresh_token')->nullable();
             $table->timestamps();
         });
 

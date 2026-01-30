@@ -19,7 +19,7 @@
     </style>
     <div class="transparentsectionbox">
         <div style="display: flex;align-items:center;justify-content:center;flex-direction: column;padding: 16px;">
-            <h1 style="display: flex;align-items: center;margin: 0px;"><span class="material-symbols-outlined" style="padding: 10px;font-size: 60px">settings</span>Welcome to the setup process!</h1>
+            <h1 style="display: flex;align-items: center;margin: 0px;"><span class="material-symbols-outlined" style="padding: 10px;font-size: 60px">dashboard</span>Dashboard Control Panel</h1>
         </div>
     </div>
     <div class="sectionbox">
