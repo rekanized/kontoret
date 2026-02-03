@@ -42,6 +42,7 @@
                 <div style="padding: 10px 16px; font-size: 0.8rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px;">Menu</div>
                 <ul>
                     @include('layouts.menu')
+                    @include('layouts.leaderboard-dropdown')
                 </ul>
             </div>
             <script>
